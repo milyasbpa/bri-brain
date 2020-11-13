@@ -34,7 +34,6 @@ class DesktopLandingPage extends StatelessWidget {
           DesktopSideBar(width*0.3125),
           Container(
             width: width*0.6875,
-            color: Colors.red,
             child: Column(  
               children: <Widget>[
                 DesktopDescription(width*0.6875),

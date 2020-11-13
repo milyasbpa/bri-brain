@@ -4,19 +4,19 @@ import 'package:flutter/material.dart';
 class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
+    return LayoutBuilder(builder: (context, constraints) {
       if (constraints.maxWidth > 800) {
-        return DesktopNavBar();
+        return DesktopNavBar("Bobby Sujatmiko","https://www.fairtravel4u.org/wp-content/uploads/2018/06/sample-profile-pic.png");
       } else {
         return MobileNavBar();
       }
-    }
-    );
+    });
   }
 }
 
 class DesktopNavBar extends StatelessWidget {
+  final String fullName,picture;
+  const DesktopNavBar(this.fullName,this.picture);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,8 +35,44 @@ class DesktopNavBar extends StatelessWidget {
                 width: 80,
               ),
             ),
-            Text('Hayolu'),
-            Text('Hayolu')
+            Row(
+              children: [
+                Container(
+                  width: 48.0,
+                  height: 48.0,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          fit: BoxFit.fill,
+                          image:
+                              NetworkImage('$picture'))),
+                ),
+                SizedBox(
+                  width: 22,
+                ),
+                Container(
+                  width: 139,
+                  height: 20,
+                  child: Text(
+                    "$fullName",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontStyle: FontStyle.normal,
+                      fontSize: 16,
+                      fontFamily: "Poppins",
+                      color: Colors.white
+                    ),
+                    ),
+                ),
+                SizedBox(width: 22),
+                SizedBox(
+                  width: 12,
+                  height: 5,
+                  child: Image.asset("images/BottomArrow.png"),
+                ),
+                SizedBox(width: 100)
+              ],
+            )
           ],
         ),
       ),

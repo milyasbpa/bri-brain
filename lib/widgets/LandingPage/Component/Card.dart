@@ -1,6 +1,7 @@
 //import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'CardComponent/SubCard.dart';
 
 class DesktopCard extends StatelessWidget {
   final double width;
@@ -8,23 +9,14 @@ class DesktopCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.yellow,
-      width: width,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(40.0),
-            child: Text(
-              'Card',
-              style: TextStyle(
-                fontSize: 20.0
-              ),
-            ),
-          )
-        ],
-      ),
+      margin: EdgeInsets.only(bottom:32 ),
+      child: Row(
+        children :[
+          SubCard("Total Nasabah","images/Icon-Total.png",707,Color.fromRGBO(130, 130, 130, 1)),
+          SubCard("Ditindaklanjuti","images/Icon-FollowUp.png",700,Color.fromRGBO(73,209,152,1)),
+          SubCard("Belum Tindak Lanjut","images/Icon-UnFollowUp.png",7,Color.fromRGBO(239,180,3,1)),
+          ]
+      )
     );
   }
 }
