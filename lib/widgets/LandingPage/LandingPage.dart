@@ -30,6 +30,7 @@ class DesktopLandingPage extends StatelessWidget {
     return Container(
       //color: Colors.yellow,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           DesktopSideBar(width*0.3125),
           Container(

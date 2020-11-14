@@ -32,6 +32,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  charts_flutter: ^0.9.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -67,8 +68,15 @@ flutter:
 
     - family: Poppins
       fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
-
+        # - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Regular400.ttf
+          weight: 400
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 600
+    
+    - family: Rubik
+      fonts:
+        - asset: assets/fonts/Rubik-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

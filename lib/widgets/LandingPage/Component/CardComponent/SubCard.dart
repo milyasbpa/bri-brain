@@ -39,7 +39,7 @@ class SubCard extends StatelessWidget {
                       child: Text(
                         "$title",
                         style: TextStyle(
-                            fontFamily: "Nunito",
+                            fontFamily: "NunitoSans",
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 14,

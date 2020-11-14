@@ -19,7 +19,7 @@ class DesktopDescription extends StatelessWidget {
             style: TextStyle(
               fontFamily: "Poppins",
               fontStyle: FontStyle.normal,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
               fontSize: 20,
               color: Color.fromRGBO(132,159,189,1)
             ),
