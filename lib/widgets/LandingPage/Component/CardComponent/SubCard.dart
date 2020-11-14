@@ -18,7 +18,11 @@ class SubCard extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
-                  BoxShadow(color: Color.fromRGBO(0, 0, 0, 0.12))
+                  BoxShadow(
+                    color: Color.fromRGBO(0, 0, 0, 0.12),
+                    blurRadius: 8.0,
+                    offset: new Offset(0, 2)
+                  )
                 ]
                 //borderRadius: BorderRadius.circular(16)
                 ),
@@ -39,7 +43,7 @@ class SubCard extends StatelessWidget {
                       child: Text(
                         "$title",
                         style: TextStyle(
-                            fontFamily: "Nunito",
+                            fontFamily: "NunitoSans",
                             fontWeight: FontWeight.w400,
                             fontStyle: FontStyle.normal,
                             fontSize: 14,
@@ -57,7 +61,7 @@ class SubCard extends StatelessWidget {
                     "$value",
                     style: TextStyle(
                         fontFamily: "Poppins",
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.w700,
                         fontStyle: FontStyle.normal,
                         fontSize: 20,
                         color: textColor

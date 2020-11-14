@@ -9,7 +9,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-              child: Column(
+        child: Column(
           children: <Widget>[
             NavBar(),
             LandingPage(),
