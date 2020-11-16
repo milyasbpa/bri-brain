@@ -1,6 +1,7 @@
 //import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'TableComponent/ShowDataTable.dart';
 
 class DesktopTable extends StatelessWidget {
   final double width;
@@ -8,23 +9,21 @@ class DesktopTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.orange,
-      width: width,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(40.0),
-            child: Text(
-              'Table',
-              style: TextStyle(
-                fontSize: 20.0
-              ),
-            ),
-          )
-        ],
-      ),
+      margin: EdgeInsets.only(right: 100,bottom: 104),
+      decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromRGBO(0, 0, 0, 0.12),
+                    blurRadius: 8.0,
+                    offset: new Offset(0, 2)
+                  )
+                ]
+                //borderRadius: BorderRadius.circular(16)
+                ),
+      child:
+        ShowDataTable()
     );
   }
 }
