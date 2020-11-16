@@ -24,9 +24,10 @@ class TableColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        color: Color.fromRGBO(246,251,255,1),
         border: Border(
-          top: BorderSide(color: Color.fromRGBO(0, 0, 0, 1), width: 0),
-          bottom : BorderSide(color: Color.fromRGBO(0, 0, 0, 1), width: 0)
+          top: BorderSide(color: Color.fromRGBO(180,212,252,1), width: 1),
+          bottom : BorderSide(color: Color.fromRGBO(180,212,252,1), width: 1)
         )
       ),
       child: Padding(

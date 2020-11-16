@@ -4,6 +4,11 @@ class HeaderTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(color: Color.fromRGBO(0,0,0,1), width: 1)
+        )
+      ),
       margin: EdgeInsets.only(bottom: 24),
       child: Padding(
         padding: const EdgeInsets.only(top: 8.0,bottom: 8.0),
