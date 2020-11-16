@@ -2,6 +2,7 @@
 import 'package:bribrain_project/widgets/LandingPage/Component/TableComponent/HeaderTable.dart';
 import 'package:bribrain_project/widgets/LandingPage/Component/TableComponent/SubHeader.dart';
 import 'package:bribrain_project/widgets/LandingPage/Component/TableComponent/TableColumn.dart';
+import 'package:bribrain_project/widgets/LandingPage/Component/TableComponent/TablePage.dart';
 import 'package:bribrain_project/widgets/LandingPage/Component/TableComponent/TableRows.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,8 @@ class ShowDataTable extends StatelessWidget {
           HeaderTable(),
           SubHeader(),
           TableColumn(),
-          TableRows()
+          TableRows(),
+          TablePage()
           ],
       ),
     );

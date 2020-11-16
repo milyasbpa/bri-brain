@@ -75,6 +75,7 @@ class TableRows extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(bottom: 18.75),
       child: Column(
         children: [
           Rows("5661*******0532", "Adi Saputra", 300, 240000000.00, 356, 88.75,"belum"),
