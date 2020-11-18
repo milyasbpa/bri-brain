@@ -1,5 +1,5 @@
-import 'package:bribrain_project/components/elements/SideBarContent.dart';
 import 'package:flutter/material.dart';
+import 'package:bribrain_project/components/elements/SideBarContent.dart';
 import 'package:bribrain_project/layout/layout.dart';
 
 class SideBarMenu extends StatelessWidget {
@@ -16,10 +16,10 @@ class SideBarMenu extends StatelessWidget {
             padding: EdgeInsets.fromLTRB(SizeConfig.blockHorizontal * 7.5,SizeConfig.blockVertical * 5.5,0,0),
             child: Column(
               children: <Widget>[
-                SideBarContent(menu: 'General', submenu: ['BRI Score', 'Geolocation'],),
-                SideBarContent(menu: 'Mikro', submenu: ['Churn Analytics', 'Rekomendasi Produk', 'Kupedes DH']),
-                SideBarContent(menu: 'Konsumer', submenu: ['CLIP', 'Collection Sharing', 'Briguna Pre Approval']),
-                SideBarContent(menu: 'Evaluasi', submenu: ['Tingkat Keberhasilan', 'Click Rate']),
+                SideBarContent(menu: 'General', submenu: ['BRI Score', 'Geolocation'],routes:['/n','/n']),
+                SideBarContent(menu: 'Mikro', submenu: ['Churn Analytics', 'Rekomendasi Produk', 'Kupedes DH'],routes:['/mikro/churn-analytics','/mikro/rekomendasi-produk','/n']),
+                SideBarContent(menu: 'Konsumer', submenu: ['CLIP', 'Collection Sharing', 'Briguna Pre Approval'], routes:['/n','/n','/n']),
+                SideBarContent(menu: 'Evaluasi', submenu: ['Tingkat Keberhasilan', 'Click Rate','Hasil Tindak Lanjut'],routes:['evaluasi/tingkat-keberhasilan','/n','/evaluasi/hasil-tindak-lanjut']),
               ],
             ),
           )

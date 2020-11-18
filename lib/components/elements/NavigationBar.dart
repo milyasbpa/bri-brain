@@ -2,6 +2,8 @@ import 'package:bribrain_project/layout/layout.dart';
 import 'package:flutter/material.dart';
 
 class NavigationBar extends StatelessWidget {
+  // const NavigationBar({@required this.loginCondition});
+  // final loginCondition;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -13,10 +15,18 @@ class NavigationBar extends StatelessWidget {
           children: [
             Flexible(
                 flex: 1,
-                child: SizedBox(
-                    child: Image.asset(
-                  "images/Logo.png",
-                ))),
+                child: Container(
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        child: Image.asset(
+                          "images/Logo.png",
+                        ),
+                      ),
+                      // FlatButton(onPressed: Navigation, child: Text('Produk dan Layanan')),
+                    ],
+                  ),
+                )),
             Flexible(
                 flex: 1,
                 child: Container(
@@ -33,17 +43,16 @@ class NavigationBar extends StatelessWidget {
                       Flexible(
                         flex: 1,
                         child: Container(
-                            child: Row(
-                                children: [
-                              Expanded(
-                                  child: Text(
-                                'Bobby Sujatmiko',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: SizeConfig.blockHorizontal * 0.9),
-                                textAlign: TextAlign.center,
-                              ))
-                            ])),
+                            child: Row(children: [
+                          Expanded(
+                              child: Text(
+                            'Bobby Sujatmiko',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: SizeConfig.blockHorizontal * 0.9),
+                            textAlign: TextAlign.center,
+                          ))
+                        ])),
                       ),
                       Flexible(
                         flex: 3,

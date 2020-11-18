@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'BRI Brain',
       onGenerateRoute: RouteGenerator.generateRoute,
+      initialRoute: '/',
     );
   }
 }

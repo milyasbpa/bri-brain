@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:bribrain_project/layout/layout.dart';
 
 class SideBarContent extends StatelessWidget {
-  const SideBarContent({@required this.menu, @required this.submenu});
-  final menu,submenu;
+  const SideBarContent({@required this.menu, @required this.submenu, @required this.routes});
+  final menu, submenu, routes;
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +14,7 @@ class SideBarContent extends StatelessWidget {
         children: [
           SideBarTitle(menu, Color.fromRGBO(51, 51, 1, 0.8)),
           Row(
-            children: [
-              subLists(submenu),
-            ],
+            children: [SubLists(submenu: submenu, routes:routes)],
           ),
         ],
       ),
@@ -24,22 +22,36 @@ class SideBarContent extends StatelessWidget {
   }
 }
 
-Widget subLists(List<String> strings) {
-  return Column(
+class SubLists extends StatelessWidget {
+  const SubLists({@required this.submenu, @required this.routes});
+  final submenu,routes;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: strings
-          .map((item) => Text(
-                item,
-                style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.w400,
-                  fontSize: SizeConfig.blockHorizontal * 0.9,
-                  color: Color.fromRGBO(132, 159, 189, 1),
-                ),
-              ))
-          .toList());
+      children: [
+        for (int i = 0; i < submenu.length; i++)
+          FlatButton(
+            onPressed: () {
+              Navigator.pushNamed(context, routes[i]);
+            },
+            child: Text(
+              submenu[i],
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w400,
+                fontSize: SizeConfig.blockHorizontal * 0.9,
+                color: Color.fromRGBO(132, 159, 189, 1),
+              ),
+            ),
+          )
+      ],
+    );
+  }
 }
+
 
 class SideBarTitle extends StatelessWidget {
   final String title;
