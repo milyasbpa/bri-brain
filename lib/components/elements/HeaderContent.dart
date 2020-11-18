@@ -1,63 +1,49 @@
-//import 'dart:html';
-
 import 'package:flutter/material.dart';
+import 'package:bribrain_project/layout/layout.dart';
 
-class DesktopDescription extends StatelessWidget {
-  final double width;
-  const DesktopDescription(this.width);
+class HeaderContent extends StatelessWidget {
+  const HeaderContent({@required this.judul, @required this.subJudul, @required this.deskripsi});
+  final judul, subJudul, deskripsi;
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Container(
-      margin: EdgeInsets.fromLTRB(0, 70, 0, 40),
-      width: width,
+      margin: EdgeInsets.fromLTRB(0, SizeConfig.blockVertical * 7, 0, 0),
+      height: SizeConfig.blockVertical * 17,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-
         children: [
-          Text(
-            'Mikro',
+          Flexible(child: Text(
+            '$judul',
             style: TextStyle(
               fontFamily: "Poppins",
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.w600,
-              fontSize: 20,
+              fontSize: SizeConfig.blockHorizontal * 1.2,
               color: Color.fromRGBO(132,159,189,1)
             ),
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          Text(
-            'Churn Analytics',
+          )),
+          Flexible(child : Text(
+            '$subJudul',
             style: TextStyle(
               fontFamily: "Poppins",
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.w600,
-              fontSize: 36,
+              fontSize: SizeConfig.blockHorizontal * 2,
               color: Color.fromRGBO(26,50,74,1)
             ),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Text(
-            'Prediksi nasabah yang akan keluar dari produk BRI atau dormant',
+          )),
+          Flexible(child : Text(
+            '$deskripsi',
             style: TextStyle(
               fontFamily: "NunitoSans",
               fontStyle: FontStyle.normal,
               fontWeight: FontWeight.w400,
-              fontSize: 14,
+              fontSize: SizeConfig.blockHorizontal * 0.8,
               color: Color.fromRGBO(132,159,189,1)
             )
-          ),
-          SizedBox(
-            height: 24,
-          ),
-          Image.asset(
-            "images/Line.png",
-            width: 890,
-          )
-
+          )),
+          Divider(),
         ],
       ),
     );
