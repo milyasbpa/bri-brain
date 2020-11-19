@@ -7,8 +7,10 @@ class PageBase extends StatelessWidget {
       {@required this.judul,
       @required this.subJudul,
       @required this.deskripsi,
-      this.content});
-  final judul, subJudul, deskripsi, content;
+      this.content,
+      this.loginCondition,
+      this.contentBeforeLogin});
+  final judul, subJudul, deskripsi, content,loginCondition,contentBeforeLogin;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,13 +18,13 @@ class PageBase extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            NavigationBar(),
-            PageHeader(
+            NavigationBar(loginCondition: loginCondition,),
+            loginCondition ? PageHeader(
                 judul: judul,
                 subjudul: subJudul,
                 deskripsi: deskripsi,
                 content: content
-            ),
+            ) : contentBeforeLogin,
           ],
         ),
       ),

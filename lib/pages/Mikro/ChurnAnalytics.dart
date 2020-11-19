@@ -1,5 +1,7 @@
 import 'package:bribrain_project/components/fragments/CardFragment.dart';
 import 'package:bribrain_project/components/fragments/ChartFragment.dart';
+import 'package:bribrain_project/components/fragments/Filter.dart';
+import 'package:bribrain_project/components/fragments/TableFragment.dart';
 import 'package:bribrain_project/components/layouts/PageBase.dart';
 import 'package:flutter/material.dart';
 
@@ -13,11 +15,15 @@ class ChurnAnalytics extends StatelessWidget {
       subJudul: 'Churn Analytics',
       deskripsi:
           'Prediksi nasabah yang akan keluar dari produk BRI atau dormant',
+      loginCondition: true,
       content: Container(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Filter(),
             CardFragment(),
             ChartFragment(),
+            TableFragment(category: 'Baik')
           ],
         ),
       ),

@@ -10,6 +10,7 @@ class HasilTindakLanjut extends StatelessWidget {
         judul: 'Evaluasi',
         subJudul: 'TindakLanjut',
         deskripsi:
-            'Laporan hasil tindak lanjut tenaga pemasar terhadap nasabah kelolaannya');
+            'Laporan hasil tindak lanjut tenaga pemasar terhadap nasabah kelolaannya',
+            loginCondition: true,);
   }
 }

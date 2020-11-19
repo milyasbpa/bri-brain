@@ -17,8 +17,10 @@ class PageHeader extends StatelessWidget {
     return Container(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          Flexible(child: SideBarMenu()),
+          SideBarMenu(),
+          // Flexible(child: SideBarMenu()),
           Expanded(
               child: Container(
             child: Column(

@@ -9,6 +9,7 @@ class RekomendasiProduk extends StatelessWidget {
     return PageBase(
         judul: 'Mikro',
         subJudul: 'RekomendasiProduk',
-        deskripsi: 'Rekomendasi produk yang tepat untuk nasabah');
+        deskripsi: 'Rekomendasi produk yang tepat untuk nasabah',
+        loginCondition: true,);
   }
 }
