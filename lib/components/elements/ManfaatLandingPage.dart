@@ -10,37 +10,64 @@ class ManfaatLandingPage extends StatelessWidget {
     SizeConfig().init(context);
     return Container(
       child: Container(
-                margin: EdgeInsets.symmetric(
-                    vertical: SizeConfig.blockVertical * 6),
-                child: Column(
+          margin: EdgeInsets.fromLTRB(0,0,0,SizeConfig.blockVertical*10),
+          child: Column(
+            children: [
+              Container(
+                margin:
+                    EdgeInsets.fromLTRB(0, 0, 0, SizeConfig.blockVertical * 10),
+                child: Text(
+                  'Manfaat BRIBRAIN',
+                  style: TextStyle(color: Color(MineShaft), fontSize: 38, fontWeight: FontWeight.bold),
+                ),
+              ),
+              Container(
+                margin:EdgeInsets.symmetric(horizontal:SizeConfig.blockHorizontal*10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      'Manfaat BRIBRAIN',
-                      style: TextStyle(color: Color(MineShaft), fontSize: 38),
+                    Container(
+                      child: Image.asset('/images/manfaat-landingPage.png'),
                     ),
                     Container(
-                      child: Row(
+                      child: Column(
                         children: [
-                          Flexible(flex: 1, child: Container()),
-                          Flexible(
-                              flex: 1,
-                              child: Container(
-                                  child: Column(
+                          for (int i = 1; i < 6; i++)
+                            Container(
+                              margin: EdgeInsets.fromLTRB(
+                                  0, 0, 0, SizeConfig.blockVertical * 2),
+                              child: Row(
                                 children: [
-                                  Row(
-                                    children: [
-                                      Text('1'),
-                                      Text(
-                                          'Manfaat Penggunaan Bribrain seperti meningkatkan produktifitas mantri'),
-                                    ],
-                                  )
+                                  Container(
+                                      width: 40,
+                                      height: 40,
+                                      margin: EdgeInsets.fromLTRB(0, 0,
+                                          SizeConfig.blockHorizontal * 1.5, 0),
+                                      decoration: BoxDecoration(
+                                          color: Color(BribrainColor),
+                                          shape: BoxShape.circle),
+                                      child: Center(
+                                        child: Text(
+                                          '$i',
+                                          style: TextStyle(
+                                              color: Color(White),
+                                              fontSize: 16),
+                                          // textAlign: TextAlign.center,
+                                        ),
+                                      )),
+                                  Text(
+                                      'Manfaat Penggunaan Bribrain seperti meningkatkan produktifitas mantri'),
                                 ],
-                              )))
+                              ),
+                            )
                         ],
                       ),
                     ),
                   ],
-                )),
+                ),
+              ),
+            ],
+          )),
     );
   }
 }

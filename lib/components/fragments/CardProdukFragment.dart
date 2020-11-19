@@ -4,9 +4,9 @@ import 'package:bribrain_project/layout/layout.dart';
 import 'package:flutter/material.dart';
 
 class CardProdukFragment extends StatelessWidget {
-  const CardProdukFragment({@required this.judul, @required this.deskripsi, @required this.menu, @required this.deskripsiMenu});
+  const CardProdukFragment({@required this.judul, @required this.deskripsi, @required this.menu, @required this.deskripsiMenu,@required this.icon});
 
- final judul,deskripsi,menu,deskripsiMenu;
+ final judul,deskripsi,menu,deskripsiMenu,icon;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class CardProdukFragment extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 for (int i=0;i<judul.length;i++)
-                  CardProduk(judul:judul[i],deskripsi: deskripsi[i],),
+                  CardProduk(judul:judul[i],deskripsi: deskripsi[i],icon:icon[i]),
               ],
             ))
         ],

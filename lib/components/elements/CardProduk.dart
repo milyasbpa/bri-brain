@@ -3,8 +3,8 @@ import 'package:bribrain_project/layout/layout.dart';
 import 'package:bribrain_project/styles/colorConst.dart';
 
 class CardProduk extends StatelessWidget {
-  const CardProduk({@required this.judul, @required this.deskripsi});
-  final judul, deskripsi;
+  const CardProduk({@required this.judul, @required this.deskripsi,@required this.icon});
+  final judul, deskripsi,icon;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class CardProduk extends StatelessWidget {
       width: 250,
       height: 250,
       padding: EdgeInsets.all(SizeConfig.blockHorizontal * 0.9),
-      margin:EdgeInsets.fromLTRB(0, 0, SizeConfig.blockHorizontal *2, 0),
+      margin:EdgeInsets.fromLTRB(0, 0, SizeConfig.blockHorizontal *5, 0),
       decoration: BoxDecoration(
           color: Color(White),
           borderRadius: BorderRadius.circular(SizeConfig.blockHorizontal * 0.6),
@@ -29,7 +29,7 @@ class CardProduk extends StatelessWidget {
           Container(
             child: Row(
               children: [
-                Icon(Icons.description),
+                Image.asset(icon, width: 48,height: 48,),
                 Expanded(
                     child: Wrap(children: [
                   Text(judul,

@@ -16,55 +16,53 @@ class BottomListMenu extends StatelessWidget {
     SizeConfig().init(context);
     return Container(
       margin: EdgeInsets.fromLTRB(0, SizeConfig.blockVertical * 6, 0, 0),
-      color: Color(BribrainColor),
+      // color: Color(BribrainColor),
       // width: SizeConfig.blockHorizontal*100,
-      child: Row(children: [
-        Container(
-          padding: EdgeInsets.symmetric(
-              horizontal: SizeConfig.blockHorizontal * 10,
-              vertical: SizeConfig.blockVertical * 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                list,
-                style: TextStyle(
-                  fontFamily: "NunitoSans",
-                  color: Color(White),
-                  fontSize: SizeConfig.blockHorizontal * 1,
-                  fontWeight: FontWeight.w700,
-                  // fontFamily: 'NunitoSans-Regular'
-                ),
-              ),
-              Container(
-                  child: Column(
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              width: SizeConfig.blockHorizontal * 30,
+              padding: EdgeInsets.symmetric(
+                  horizontal: SizeConfig.blockHorizontal * 10,
+                  vertical: SizeConfig.blockVertical * 10),
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                    for (int i = 0; i < sublist.length; i++)
-                    // Expanded(child :
-                    // Wrap(children: [
-                      Text(sublist[i],
-                          style: (TextStyle(
-                              fontFamily: "NunitoSans",
-                              color: Color(White),
-                              fontSize: SizeConfig.blockHorizontal * 1,
-                              fontWeight: FontWeight.w400)))
-                  // ])
-                  // )
+                  Container(
+                    child: Text(
+                      list,
+                      style: TextStyle(
+                        fontFamily: "NunitoSans",
+                        color: Color(White),
+                        fontSize: SizeConfig.blockHorizontal * 1,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: Wrap(
+                      alignment: WrapAlignment.start,
+                      direction: Axis.vertical,
+                      children: [
+                        for (int i = 0; i < sublist.length; i++)
+                          Text(
+                            sublist[i],
+                            style: (TextStyle(
+                                // fontFamily: "NunitoSans",
+                                color: Color(White),
+                                fontSize: SizeConfig.blockHorizontal * 1,
+                                fontWeight: FontWeight.w400)),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                      ],
+                    ),
+                  )
                 ],
-                // _listItem.map((item) {
-                //   return Text(item.submenu,
-                //       style: (TextStyle(
-                //           fontFamily: "NunitoSans",
-                //           color: Color(White),
-                //           fontSize: SizeConfig.blockHorizontal * 1,
-                //           fontWeight: FontWeight.w400)));
-                // }).toList(),
-              ))
-            ],
-          ),
-        ),
-      ]),
+              ),
+            ),
+          ]),
     );
   }
 }

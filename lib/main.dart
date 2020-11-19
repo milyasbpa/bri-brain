@@ -1,3 +1,4 @@
+import 'package:bribrain_project/pages/Main/LandingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:bribrain_project/utils/RouteGenerator.dart';
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'BRI Brain',
       onGenerateRoute: RouteGenerator.generateRoute,
       // initialRoute: '/',
+      // home: LandingPage(),
     );
   }
 }

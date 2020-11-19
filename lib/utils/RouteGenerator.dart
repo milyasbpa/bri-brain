@@ -35,7 +35,7 @@ class RouteGenerator {
   static Route<dynamic> _errorRoute() {
     return MaterialPageRoute(builder: (context) {
       return PageBase(
-          judul: '', subJudul: 'Halaman Tidak Ditemukan', deskripsi: '');
+          judul: '', subJudul: 'Halaman Tidak Ditemukan', deskripsi: '',loginCondition: false,);
     });
   }
 }

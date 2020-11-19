@@ -10,29 +10,38 @@ class Item {
 }
 
 class BottomListFragment extends StatelessWidget {
-  // const BottomListFragment({Key key}) : super(key: key);
-  // final List _listItem = [
-  //   Item('Produk dan Layanan', '/produk-layanan'),
-  //   Item('Frequently Asked Questions (FAQ)', '/faq'),
-  // ];
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Container(
-      margin: EdgeInsets.fromLTRB(0, SizeConfig.blockVertical * 6, 0, 0),
-      color: Color(BribrainColor),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Stack(
         children: [
-          BottomListMenu(list: 'Products', sublist: [
-                'Produk dan Layanan',
-                'Frequently Asked Question (FAQ)'
-              ]),
-         BottomListMenu(
-                  list: 'Corp Website', sublist: ['BRI Websites']),
-          BottomListMenu(list: 'Address', sublist: [
-                'Jl. Jend. Sudirman No. Kav 44-46 RT. 14/ RW. 1 Bend. Hilir, Tanah Abang Jakarta Pusat, DKI Jakarta 10210'
-              ]),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            child: Image.asset(
+              'images/vector-bottom-landingPage.png',
+              width: SizeConfig.blockHorizontal * 100,
+              fit: BoxFit.fitWidth,
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(0, SizeConfig.blockVertical * 6, 0, 0),
+            // color: Color(BribrainColor),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                BottomListMenu(list: 'Products', sublist: [
+                  'Produk dan Layanan',
+                  'Frequently Asked Question (FAQ)'
+                ]),
+                BottomListMenu(list: 'Corp Website', sublist: ['BRI Websites']),
+                BottomListMenu(list: 'Address', sublist: [
+                  'Jl. Jend. Sudirman No. Kav 44-46 RT. 14/ RW. 1 Bend. Hilir, Tanah Abang Jakarta Pusat, DKI Jakarta 10210'
+                ]),
+              ],
+            ),
+          ),
         ],
       ),
     );

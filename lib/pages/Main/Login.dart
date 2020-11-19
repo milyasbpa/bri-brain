@@ -1,4 +1,4 @@
-import 'package:bribrain_project/components/elements/LandingPageTitle.dart';
+import 'package:bribrain_project/components/fragments/LandingPageTitle.dart';
 import 'package:bribrain_project/components/layouts/PageBase.dart';
 import 'package:bribrain_project/layout/layout.dart';
 import 'package:bribrain_project/styles/colorConst.dart';
@@ -86,7 +86,8 @@ class Login extends StatelessWidget {
                                 filled: true,
                                 hoverColor: Color(0xFFF4F4F4),
                                 labelStyle: TextStyle(color: Color(0xFF8F9AB0)),
-                                labelText: 'Captcha'),
+                                labelText: 'Captcha'
+                              ),
                           ),
                         ),
                       ],
